@@ -8,9 +8,17 @@ function App() {
     email: "",
     password: "",
     confirmPassword: "",
+    captcha: "",
   });
 
+  const [captcha, setCaptcha] = useState("");
+
   const { name, email, password, confirmPassword } = formData;
+
+  useState(() => {
+    const randomNumber = Math.trunc(Math.random() * 100000);
+    setCaptcha(randomNumber);
+  }, []);
 
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: [e.target.value] });
@@ -20,12 +28,19 @@ function App() {
     e.preventDefault();
   };
 
+  const refresh = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="app">
       <div className="registerSection">
         <img src={registerImage} alt="" />
         <div className="registerForm">
-          <h1>Devdock</h1>
+          <div className="logo">
+            <i className="fa-brands fa-dev"></i>
+            <h1>Devdock</h1>
+          </div>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -60,8 +75,14 @@ function App() {
               required
             />
             <div className="captcha">
-              <input type="text" id="captcha" placeholder="captcha" />
-              <i className="fa-solid fa-arrows-rotate"></i>
+              <input
+                type="text"
+                id="captcha"
+                value={captcha}
+                placeholder="captcha"
+                readOnly
+              />
+              <i className="fa-solid fa-arrows-rotate" onClick={refresh}></i>
             </div>
             <button id="btnSubmit">Sign Up</button>
           </form>
