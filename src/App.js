@@ -8,16 +8,18 @@ function App() {
     email: "",
     password: "",
     confirmPassword: "",
-    captcha: "",
+    captchaInput: "",
   });
 
   const [captcha, setCaptcha] = useState("");
 
-  const { name, email, password, confirmPassword } = formData;
+  const [message, setMessage] = useState("");
+
+  const { name, email, password, confirmPassword, captchaInput } = formData;
 
   useState(() => {
-    const randomNumber = Math.trunc(Math.random() * 100000);
-    setCaptcha(randomNumber);
+    setMessage("");
+    setCaptcha(Math.trunc(Math.random() * 1000000));
   }, []);
 
   const handleChange = (e) => {
@@ -26,6 +28,21 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(password.toString(), confirmPassword.toString());
+    if (!(captchaInput.toString() === captcha.toString())) {
+      setMessage("Captcha didn't match 😐");
+    } else if (!(password.toString() === confirmPassword.toString())) {
+      setMessage("Password didn't match! 😐");
+    } else {
+      setMessage("Registration successfull!! 🤩");
+    }
+    setformData({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      captchaInput: "",
+    });
   };
 
   const refresh = () => {
@@ -34,14 +51,19 @@ function App() {
 
   return (
     <div className="app">
+      <div className="logo">
+        <i className="fa-brands fa-dev"></i>
+        <h1>Devdock, the ultimate developer guide.</h1>
+      </div>
       <div className="registerSection">
         <img src={registerImage} alt="" />
         <div className="registerForm">
-          <div className="logo">
+          {/* <div className="logo">
             <i className="fa-brands fa-dev"></i>
             <h1>Devdock</h1>
-          </div>
-          <form onSubmit={handleSubmit}>
+          </div> */}
+          <h2 id="tag">Just a click away from becoming a better YOU</h2>
+          <form className="form" onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Name"
@@ -59,7 +81,7 @@ function App() {
               required
             />
             <input
-              type="text"
+              type="password"
               placeholder="Password"
               name="password"
               value={password}
@@ -67,10 +89,18 @@ function App() {
               required
             />
             <input
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               name="confirmPassword"
               value={confirmPassword}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Enter the Captcha"
+              name="captchaInput"
+              value={captchaInput}
               onChange={handleChange}
               required
             />
@@ -88,6 +118,7 @@ function App() {
           </form>
         </div>
       </div>
+      <p className="message">{message}</p>
     </div>
   );
 }
