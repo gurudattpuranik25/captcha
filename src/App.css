@@ -65,6 +65,11 @@ img {
 #tag {
   text-align: center;
   padding-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+h3 {
+  padding-bottom: 0.5rem;
 }
 
 .form {
@@ -125,3 +130,4 @@ img {
   font-size: 1.5rem;
   font-weight: 500;
 }
+

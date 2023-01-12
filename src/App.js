@@ -28,7 +28,6 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(password.toString(), confirmPassword.toString());
     if (!(captchaInput.toString() === captcha.toString())) {
       setMessage("Captcha didn't match 😐");
     } else if (!(password.toString() === confirmPassword.toString())) {
@@ -62,7 +61,10 @@ function App() {
             <i className="fa-brands fa-dev"></i>
             <h1>Devdock</h1>
           </div> */}
-          <h2 id="tag">Just a click away from becoming a better YOU</h2>
+          <h2 id="tag">Design . Develop . Deploy</h2>
+          <h3>
+            Register below <i className="fa-solid fa-arrow-down"></i>{" "}
+          </h3>
           <form className="form" onSubmit={handleSubmit}>
             <input
               type="text"
