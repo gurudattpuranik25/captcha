@@ -35,7 +35,8 @@
 
 .logo {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  justify-content: center;
   gap: 1rem;
   padding-bottom: 0.5rem;
 }
@@ -45,13 +46,13 @@
   color: #0e1012;
 }
 
-.logo h1 {
+.logo #tagline {
   font-size: 3.8rem;
   font-weight: 800;
   color: #0e1012;
 }
 
-.logo h1::first-letter {
+.logo #tagline::first-letter {
   color: tomato;
   font-size: 5rem;
 }
@@ -131,3 +132,62 @@ h3 {
   font-weight: 500;
 }
 
+@media (max-width: 1140px) {
+  .fa-dev {
+    font-size: 3rem;
+  }
+
+  .logo #tagline {
+    transition: 0.3s ease-in-out;
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .logo #tagline {
+    transition: 0.3s ease-in-out;
+    font-size: 2.5rem;
+  }
+  .registerSection {
+    transition: 0.3s ease-in-out;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 755px) {
+  .logo #tagline {
+    transition: 0.3s ease-in-out;
+    text-align: center;
+  }
+}
+
+@media (max-width: 535px) {
+  img {
+    width: 28rem;
+    height: 32rem;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 475px) {
+  img {
+    width: 25rem;
+    height: 29rem;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 425px) {
+  img {
+    width: 21rem;
+    height: 25rem;
+    transition: 0.3s ease-in-out;
+  }
+  .registerForm {
+    width: 22rem;
+  }
+  .form input,
+  .form #btnSubmit {
+    width: 22rem;
+  }
+}

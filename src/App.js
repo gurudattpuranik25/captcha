@@ -51,8 +51,12 @@ function App() {
   return (
     <div className="app">
       <div className="logo">
-        <i className="fa-brands fa-dev"></i>
-        <h1>Devdock, the ultimate developer guide.</h1>
+        {/* <i className="fa-brands fa-dev"></i> */}
+        <h1 id="tagline">
+          {" "}
+          <i className="fa-brands fa-dev"></i> Devdock, the ultimate developer
+          guide.
+        </h1>
       </div>
       <div className="registerSection">
         <img src={registerImage} alt="" />
