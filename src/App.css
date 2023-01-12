@@ -52,7 +52,7 @@
   color: #0e1012;
 }
 
-.logo #tagline::first-letter {
+.logo span {
   color: tomato;
   font-size: 5rem;
 }

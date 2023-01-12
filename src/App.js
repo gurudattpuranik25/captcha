@@ -51,11 +51,10 @@ function App() {
   return (
     <div className="app">
       <div className="logo">
-        {/* <i className="fa-brands fa-dev"></i> */}
         <h1 id="tagline">
           {" "}
-          <i className="fa-brands fa-dev"></i> Devdock, the ultimate developer
-          guide.
+          <i className="fa-brands fa-dev"></i> <span>D</span>evdock, the
+          ultimate developer guide.
         </h1>
       </div>
       <div className="registerSection">
@@ -76,6 +75,7 @@ function App() {
               name="name"
               value={name}
               onChange={handleChange}
+              autoComplete="off"
               required
             />
             <input
@@ -84,6 +84,7 @@ function App() {
               name="email"
               value={email}
               onChange={handleChange}
+              autoComplete="off"
               required
             />
             <input
@@ -92,6 +93,7 @@ function App() {
               name="password"
               value={password}
               onChange={handleChange}
+              autoComplete="off"
               required
             />
             <input
@@ -100,6 +102,7 @@ function App() {
               name="confirmPassword"
               value={confirmPassword}
               onChange={handleChange}
+              autoComplete="off"
               required
             />
             <input
@@ -108,6 +111,7 @@ function App() {
               name="captchaInput"
               value={captchaInput}
               onChange={handleChange}
+              autoComplete="off"
               required
             />
             <div className="captcha">
@@ -116,6 +120,7 @@ function App() {
                 id="captcha"
                 value={captcha}
                 placeholder="captcha"
+                autoComplete="off"
                 readOnly
               />
               <i className="fa-solid fa-arrows-rotate" onClick={refresh}></i>
