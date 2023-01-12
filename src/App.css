@@ -1,12 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
-/* background-color: #0e1012; */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Cabinet Grotesk", sans-serif;
+}
+
+.dark__theme {
+  color: #e4e3e3;
+}
+
+.light__theme {
+  color: #0e1012;
+}
+
+.body {
   background-color: #e4e3e3;
+}
+
+.dark__body {
+  background-color: #0e1012;
+}
+
+.fa-circle-half-stroke {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .app {
@@ -35,7 +57,6 @@
 
 .logo {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   gap: 1rem;
   padding-bottom: 0.5rem;
@@ -46,10 +67,23 @@
   color: #0e1012;
 }
 
-.logo #tagline {
+.dark__logo {
+  color: #e4e3e3;
+}
+
+.logo .tagline {
   font-size: 3.8rem;
   font-weight: 800;
   color: #0e1012;
+}
+
+.tagline {
+  color: red;
+}
+
+.dark__tagline {
+  color: #e4e3e3;
+  font-size: 3.8rem;
 }
 
 .logo span {
@@ -67,10 +101,23 @@ img {
   text-align: center;
   padding-bottom: 0.5rem;
   font-size: 2rem;
+  color: #0e1012;
 }
 
-h3 {
+#dark__tag {
+  color: #e4e3e3;
+  font-size: 2rem;
   padding-bottom: 0.5rem;
+}
+
+#registertag {
+  padding-bottom: 1rem;
+  color: #0e1012;
+}
+
+#dark__registerTag {
+  color: #e4e3e3;
+  padding-bottom: 1rem;
 }
 
 .form {
@@ -82,14 +129,31 @@ h3 {
 }
 
 .form input,
-.form #btnSubmit {
+.form #btnSubmit,
+.form #dark__btnSubmit {
   width: 25rem;
   padding: 0.8rem;
   font-size: 1.2rem;
   border-radius: 5px;
 }
 
-.form input::placeholder {
+.form .light__input {
+  background-color: #e4e3e3;
+  outline: none;
+  color: #0e1012;
+  border: none;
+  box-shadow: inset 0px 0px 0px 1px #0e1012;
+}
+
+.form .dark__input {
+  background-color: #0e1012;
+  outline: none;
+  color: #e4e3e3;
+  border: none;
+  box-shadow: inset 0px 0px 0px 1px #e4e3e3;
+}
+
+.form .light__input::placeholder {
   color: #0e1012;
 }
 
@@ -120,34 +184,70 @@ h3 {
   color: #e4e3e3;
   transition: 0.2s ease-in-out;
   font-weight: 700;
+  border: none;
+}
+
+.form #dark__btnSubmit {
+  background-color: #e4e3e3;
+  color: #0e1012;
+  transition: 0.2s ease-in-out;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
 }
 
 .form #btnSubmit:hover {
   background-color: #e4e3e3;
   color: #0e1012;
+  box-shadow: inset 0px 0px 0px 1px #0e1012;
 }
 
-.message {
+.form #dark__btnSubmit:hover {
+  background-color: #0e1012;
+  color: #e4e3e3;
+  box-shadow: inset 0px 0px 0px 1px #e4e3e3;
+}
+
+.light__message {
   font-size: 2rem;
   font-weight: 700;
+  text-align: center;
+}
+
+.dark__message {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e4e3e3;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .body {
+    padding: 3.5rem 0;
+  }
+  .dark__body {
+    padding: 3.5rem 0;
+  }
 }
 
 @media (max-width: 1140px) {
-  .app {
-    padding: 2rem 0;
-  }
-  .fa-dev {
+  .logo .tagline {
+    transition: 0.3s ease-in-out;
     font-size: 3rem;
   }
 
-  .logo #tagline {
+  .logo .dark__tagline {
     transition: 0.3s ease-in-out;
     font-size: 3rem;
   }
 }
 
 @media (max-width: 950px) {
-  .logo #tagline {
+  .logo .tagline {
+    transition: 0.3s ease-in-out;
+    font-size: 2.5rem;
+  }
+  .logo .dark__tagline {
     transition: 0.3s ease-in-out;
     font-size: 2.5rem;
   }
@@ -158,7 +258,11 @@ h3 {
 }
 
 @media (max-width: 755px) {
-  .logo #tagline {
+  .logo .tagline {
+    transition: 0.3s ease-in-out;
+    text-align: center;
+  }
+  .logo .dark__tagline {
     transition: 0.3s ease-in-out;
     text-align: center;
   }
@@ -191,6 +295,11 @@ h3 {
   }
   .form input,
   .form #btnSubmit {
+    width: 22rem;
+  }
+
+  .form input,
+  .form #dark__btnSubmit {
     width: 22rem;
   }
 }
