@@ -20,9 +20,27 @@ function App() {
 
   const { name, email, password, confirmPassword, captchaInput } = formData;
 
+  const generateCaptcha = () => {
+    const alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const first = alphabets[Math.trunc(Math.random() * alphabets.length)];
+    const second = Math.trunc(Math.random() * 10);
+    const fourth = alphabets[Math.trunc(Math.random() * alphabets.length)];
+    const third = Math.trunc(Math.random() * 10);
+    const fifth = alphabets[Math.trunc(Math.random() * alphabets.length)];
+    const sixth = Math.trunc(Math.random() * 10);
+    const combinedCaptcha =
+      first.toString() +
+      second.toString() +
+      third.toString() +
+      fourth.toString() +
+      fifth.toString() +
+      sixth.toString();
+    setCaptcha(combinedCaptcha);
+  };
+
   useState(() => {
     setMessage("");
-    setCaptcha(Math.trunc(Math.random() * 1000000));
+    generateCaptcha();
   }, []);
 
   const handleChange = (e) => {
@@ -52,7 +70,7 @@ function App() {
   };
 
   const refresh = () => {
-    window.location.reload();
+    generateCaptcha();
   };
 
   const handleThemeChange = () => {
