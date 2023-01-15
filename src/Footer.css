@@ -1,0 +1,43 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.footer .copyright {
+  font-size: 1.2rem;
+}
+
+.footer .dark__copyright {
+  color: #e4e3e3;
+  font-size: 1.2rem;
+}
+
+.social__icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.dark__social__icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.dark__social__icons i {
+  color: #e4e3e3;
+}
+
+.social__icons i {
+  color: #0e1012;
+}
+
+@media (max-width: 540px) {
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

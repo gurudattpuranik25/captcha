@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import registerImage from "./assets/register.jpg";
+import Footer from "./Footer";
 
 function App() {
   const [formData, setformData] = useState({
@@ -158,6 +159,7 @@ function App() {
           {message}
         </p>
       </div>
+      <Footer theme={theme} />
     </div>
   );
 }
